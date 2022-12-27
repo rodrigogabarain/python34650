@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de pilotos Turismo Carretera</h1>
+
+    {% for pilot in pilots %}
+        <h3 style="color:blue ">Nombre del piloto: {{pilot.name}}</h3>
+        <h4>Puntaje en el campeonato: {{pilot.points}}</h4>
+        <h2 style="color:gray">Gano al menos una carrera?</h2>
+        {% if pilot.enabled == True %}
+        <h3 style="color:green">SI, Habilitado para ser campeon</h3>
+        {% else %}
+        <h3 style="color:red">NO, Debe ganar para estar habilitado</p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
